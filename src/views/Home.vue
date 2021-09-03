@@ -4,15 +4,15 @@
     <div class="banner">
         <h1>Han-UI</h1>
         <h2>一个支持vue，react的UI框架</h2>
-        <p class="action">
-            <a href="">GitHub</a> |
-            <a href="">开始</a>
+        <p class="actions">
+            <a href="https://github.com/han-111/han-ui/tree/master">GitHub</a>
+            <router-link to="/doc">开始</router-link>
         </p>
     </div>
 </div>
     
 </template>
-<script>
+<script lang="ts">
 import Topnav from '../components/Topnav.vue'
 export default {
     components:{
@@ -20,7 +20,7 @@ export default {
     },
 }
 </script>
-<style lang="sacc" scope>
+<style lang="scss" scoped>
 .banner {
   padding: 100px 0;
   display: flex;

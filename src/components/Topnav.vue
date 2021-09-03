@@ -5,15 +5,21 @@
           <li>菜单1</li>
           <li>菜单2</li>
         </ul>
-         <span class="toggleAside" @click="toggleMenu"></span>
+          <img class="toggleAside" src="../assets/icon_list.png" @click="toggleMenu">
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { inject,Ref } from 'vue';
 export default {
   name: 'Topnav',
   setup(){
-      const toggleMenu = () => {};
+    const menuVisible = inject<Ref<Boolean>>('menuVisible')//get
+      console.log(menuVisible)
+      const toggleMenu = () => {
+        menuVisible.value = !menuVisible.value
+      };
+       return { toggleMenu };
     },
 }
 </script>
@@ -45,7 +51,6 @@ export default {
   > .toggleAside {
     width: 24px;
     height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;
